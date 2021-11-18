@@ -2,9 +2,9 @@ package errcode
 
 // Error code should start from 10 000 000 to ensure equal length.
 // Format: AA BBB CCC
-// AA: Platform (10 is for system error. Business related errors should start at 200)
+// AA: Platform (10 is for system error. Business related errors should start at 20)
 // BBB: Module
-// CCC: Specific error code
+// CCC: Specific error
 const (
 	SUCCESS = 0
 
@@ -17,7 +17,7 @@ const (
 var codeDefaultDesc = map[int32]string{
 	SUCCESS: "success",
 
-	ReqParamIllegal: "请求参数非法",
+	ReqParamIllegal: "Illegal request parameter",
 	Unauthorized:    "Unauthorized",
 	Forbidden:       "Forbidden",
 }
