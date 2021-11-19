@@ -1,0 +1,5 @@
+platforms:
+  - name: "common 通用错误"
+    code: "10"
+    prefix: ""
+    dir: "common"

@@ -1,0 +1,13 @@
+modules:
+  - name: "服务错误 service error"
+    code: "000"
+    prefix: "Service"
+    file_name: "service"
+#  - name: "请求错误 request error"
+#    code: "001"
+#    prefix: "Request"
+#    file_name: "request"
+#  - name: "通用数据错误 common data error"
+#    code: "100"
+#    prefix: "Data"
+#    file_name: "data"
