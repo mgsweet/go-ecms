@@ -1,0 +1,9 @@
+platforms:
+  - name: "common 通用错误"
+    code: "10"
+    prefix: ""
+    dir_path: "common"
+  - name: "新增平台 example" # 这个只是为了便于理解，会在静态页面上展示
+    code: "11"
+    prefix: "NewPlatform" # 这个会给你的错误码加上前缀，不填则不加，请使用驼峰命名法
+    d ir: "new_platform" # 模块定义所在文件夹
