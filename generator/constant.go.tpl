@@ -1,4 +1,5 @@
 package errcode
+// This file is generated. Do not edit.
 
 // Error code should start from 10 000 000 to ensure equal length.
 // Format: AA BBB CCC
@@ -10,7 +11,7 @@ const (
 
     {{range $platform := .}}// Platform: "{{ $platform.Name }}"
     {{range $module := $platform.Modules}}// Module: "{{ $module.Name }}", Code format: {{ $platform.Code }} {{ $module.Code }} xxx
-    {{range $specificError := $module.SpecificErrors}}const {{ $platform.Prefix }}{{ $module.Prefix }}{{ $specificError.Name }} = {{ $platform.Code }}{{ $module.Code }}{{ $specificError.Code }} // {{$specificError.Description}}
+    {{range $specificError := $module.SpecificErrors}}{{ $platform.Prefix }}{{ $module.Prefix }}{{ $specificError.Name }} = {{ $platform.Code }}{{ $module.Code }}{{ $specificError.Code }} // {{$specificError.Description}}
     {{end}}{{end}}{{end}}
 )
 
@@ -20,7 +21,7 @@ var codeDefaultDesc = map[int32]string{
 
     {{range $platform := .}}// Platform: "{{ $platform.Name }}"
     {{range $module := $platform.Modules}}// Module: "{{ $module.Name }}"
-    {{range $specificError := $module.SpecificErrors}}const {{ $platform.Prefix }}{{ $module.Prefix }}{{ $specificError.Name }} = "{{ $specificError.Description }}"
+    {{range $specificError := $module.SpecificErrors}}{{ $platform.Prefix }}{{ $module.Prefix }}{{ $specificError.Name }}: "{{ $specificError.Description }}",
     {{end}}{{end}}{{end}}
 }
 
