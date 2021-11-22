@@ -1,6 +1,6 @@
 ---
 title: "{{.ErrorCode}}"
-date: {{.TimeStr}}
+date: 2021-11-22T17:39:10+08:00
 ---
 ## {{.ErrorName}}
 | Platform                   | Module

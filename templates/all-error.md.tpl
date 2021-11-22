@@ -1,6 +1,6 @@
 ---
 title: "错误总览"
-date: {{.TimeStr}}
+date: 2021-11-22T17:39:10+08:00
 ---
 {{range $platform := .Platforms }}## {{$platform.Name}} ({{$platform.Code}})
 {{range $module := $platform.Modules}}### {{$module.Name}} ({{$module.Code}})

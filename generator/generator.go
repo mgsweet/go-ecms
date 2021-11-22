@@ -5,7 +5,6 @@ import (
 	"os"
 	"strconv"
 	"text/template"
-	"time"
 )
 
 // GenerateCode generates the code for both go constant file and static site.
@@ -34,10 +33,8 @@ func generateSiteCode(platforms []Platform, templateDir, outputDir string) {
 
 	err = allErrorTmpl.Execute(f, struct {
 		Platforms []Platform
-		TimeStr   string
 	}{
 		Platforms: platforms,
-		TimeStr:   time.Now().Format(time.RFC3339),
 	})
 
 	err = f.Close()
@@ -70,7 +67,6 @@ func generateSiteCode(platforms []Platform, templateDir, outputDir string) {
 					ErrorCode    string
 					ErrorName    string
 					ErrorDesc    string
-					TimeStr      string
 				}{
 					PlatformName: platform.Name,
 					PlatformCode: platform.Code,
@@ -79,7 +75,6 @@ func generateSiteCode(platforms []Platform, templateDir, outputDir string) {
 					ErrorCode:    errCode,
 					ErrorName:    errName,
 					ErrorDesc:    specificError.Desc,
-					TimeStr:      time.Now().Format(time.RFC3339),
 				})
 
 				err = f.Close()
