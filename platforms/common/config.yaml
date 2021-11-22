@@ -6,7 +6,7 @@ modules:
 #  - name: "请求错误 request error"
 #    code: "001"
 #    prefix: "Request"
-#    file_name: "request"
+#    file_name: "request.yaml"
 #  - name: "通用数据错误 common data error"
 #    code: "100"
 #    prefix: "Data"
