@@ -7,6 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 22 Nov 2021 17:39:10 +0800</lastBuildDate><atom:link href="https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>规则用法</title>
+      <link>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/usage/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/usage/</guid>
+      <description>命名规则     尽量不要带 err 或 error。例如：未授权错误应命名为 Unauthorized 而不是 UnauthorizedError 使用驼峰法命名，不要有下划线！参考：net/http/status.go 命名和描述都要遵守先英文描述后中文描述的规则。  错误码分段规则     数据类型：int32 (最长支持9位) 0 保留用作表示 成功 错误码从 10 000 000 开始设计，以保证长度相同，同时避免和框架错误码冲突。（Kite框架错误：100~1000、Mesh相关错误：1000~10000） 业务错误码从 20 000 000 开始设计，10 000 000～19 999 999 为通用错误码段。尽管没有那么多通用错误码需求，但为了可以让用户从第一个数字就能分辨出是通用错误还是业务错误，这里设计了这个区间。 每个分级下错误码建议从 001 开始，000 作为分级通用错误保留（例如对错误不好定义或未知错误）     平台标识 platform 服务模块 module 具体错误 specific error     (BB) (CCC) (DDD)    如何新增平台    以新增 组织中心 (organization) 平台为例</description>
+    </item>
+    
+    <item>
+      <title>设计思想</title>
+      <link>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/design-idea/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/design-idea/</guid>
+      <description>错误码的价值    什么是错误码的价值：错误码给我们提供了一种快速过滤问题的方法。如HTTP的Code，一看到5XX，我们就知道是服务端的问题，一看到4XX，就是客户端的问题。错误码给服务提供方提供了一种快速排查问题的手段，给服务消费方提供了一个分析问题的方法。
+错误码使用频率分析    错误码的调用和查询相对于错误码的修改是更高频的操作，所以在设计上会尽量减少对文档管理的错误码调用习惯的改变。但为了更好规范错误码的定义，该设计会稍微增加一点错误码修改的学习成本。
+目标和收益     保障错误码定义规范化、清晰易维护 通过制定和保证全局的错误码定义规范，使得新增错误码清晰可辨认，具备一定的可读性，且全局唯一。 QA/PM 和客户端同学根据 code 大概了解错误原因，也可从网页直接查询错误码含义。  原则     不改变旧的错误码使用习惯，依然要支持 Go Module 错误码使用时名字可自动补全的特性，方便研发的同学调用。 要改变旧的错误码创建、修改、查询方式，规范错误码的命名和占位段。 可完全独立部署运行，可中台化（optional 可开源） 使用纯数字，最大不能超过32位 一定要做到足够简单，尽量减少 RD 在使用习惯上的改变。用户只关心简不简单，好不好用！  </description>
+    </item>
+    
+    <item>
       <title>错误总览</title>
       <link>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/all-error/</link>
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>

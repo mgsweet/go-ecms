@@ -10,11 +10,13 @@
 
 
 
-    <meta name="description" content="go-ecms Doc">
+    <meta name="description" content="错误码的价值    什么是错误码的价值：错误码给我们提供了一种快速过滤问题的方法。如HTTP的Code，一看到5XX，我们就知道是服务端的问题，一看到4XX，就是客户端的问题。错误码给服务提供方提供了一种快速排查问题的手段，给服务消费方提供了一个分析问题的方法。
+错误码使用频率分析    错误码的调用和查询相对于错误码的修改是更高频的操作，所以在设计上会尽量减少对文档管理的错误码调用习惯的改变。但为了更好规范错误码的定义，该设计会稍微增加一点错误码修改的学习成本。
+目标和收益     保障错误码定义规范化、清晰易维护 通过制定和保证全局的错误码定义规范，使得新增错误码清晰可辨认，具备一定的可读性，且全局唯一。 QA/PM 和客户端同学根据 code 大概了解错误原因，也可从网页直接查询错误码含义。  原则     不改变旧的错误码使用习惯，依然要支持 Go Module 错误码使用时名字可自动补全的特性，方便研发的同学调用。 要改变旧的错误码创建、修改、查询方式，规范错误码的命名和占位段。 可完全独立部署运行，可中台化（optional 可开源） 使用纯数字，最大不能超过32位 一定要做到足够简单，尽量减少 RD 在使用习惯上的改变。用户只关心简不简单，好不好用！  ">
 
 
 
-    <title>总览 | go-ecms Doc</title>
+    <title>设计思想 | go-ecms Doc</title>
 
     <link rel="icon" type="image/svg+xml" href="/go-ecms/favicon/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/go-ecms/favicon/favicon-32x32.png">
@@ -22,15 +24,21 @@
 
     
 
-    <meta property="og:title" content="总览" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/" />
+    <meta property="og:title" content="设计思想" />
+<meta property="og:description" content="错误码的价值    什么是错误码的价值：错误码给我们提供了一种快速过滤问题的方法。如HTTP的Code，一看到5XX，我们就知道是服务端的问题，一看到4XX，就是客户端的问题。错误码给服务提供方提供了一种快速排查问题的手段，给服务消费方提供了一个分析问题的方法。
+错误码使用频率分析    错误码的调用和查询相对于错误码的修改是更高频的操作，所以在设计上会尽量减少对文档管理的错误码调用习惯的改变。但为了更好规范错误码的定义，该设计会稍微增加一点错误码修改的学习成本。
+目标和收益     保障错误码定义规范化、清晰易维护 通过制定和保证全局的错误码定义规范，使得新增错误码清晰可辨认，具备一定的可读性，且全局唯一。 QA/PM 和客户端同学根据 code 大概了解错误原因，也可从网页直接查询错误码含义。  原则     不改变旧的错误码使用习惯，依然要支持 Go Module 错误码使用时名字可自动补全的特性，方便研发的同学调用。 要改变旧的错误码创建、修改、查询方式，规范错误码的命名和占位段。 可完全独立部署运行，可中台化（optional 可开源） 使用纯数字，最大不能超过32位 一定要做到足够简单，尽量减少 RD 在使用习惯上的改变。用户只关心简不简单，好不好用！  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/design-idea/" /><meta property="article:section" content="总览" />
+<meta property="article:published_time" content="2021-11-22T17:39:10+08:00" />
+<meta property="article:modified_time" content="2021-11-22T17:39:10+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="总览"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="设计思想"/>
+<meta name="twitter:description" content="错误码的价值    什么是错误码的价值：错误码给我们提供了一种快速过滤问题的方法。如HTTP的Code，一看到5XX，我们就知道是服务端的问题，一看到4XX，就是客户端的问题。错误码给服务提供方提供了一种快速排查问题的手段，给服务消费方提供了一个分析问题的方法。
+错误码使用频率分析    错误码的调用和查询相对于错误码的修改是更高频的操作，所以在设计上会尽量减少对文档管理的错误码调用习惯的改变。但为了更好规范错误码的定义，该设计会稍微增加一点错误码修改的学习成本。
+目标和收益     保障错误码定义规范化、清晰易维护 通过制定和保证全局的错误码定义规范，使得新增错误码清晰可辨认，具备一定的可读性，且全局唯一。 QA/PM 和客户端同学根据 code 大概了解错误原因，也可从网页直接查询错误码含义。  原则     不改变旧的错误码使用习惯，依然要支持 Go Module 错误码使用时名字可自动补全的特性，方便研发的同学调用。 要改变旧的错误码创建、修改、查询方式，规范错误码的命名和占位段。 可完全独立部署运行，可中台化（optional 可开源） 使用纯数字，最大不能超过32位 一定要做到足够简单，尽量减少 RD 在使用习惯上的改变。用户只关心简不简单，好不好用！  "/>
 
 
     <script src="/go-ecms/js/darkmode-ce906ea916.min.js"></script>
@@ -55,6 +63,44 @@
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
     
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "TechArticle",
+    "articleSection": "总览",
+    "name": "设计思想",
+    "headline": "设计思想",
+    "alternativeHeadline": "",
+    "description": "错误码的价值    什么是错误码的价值：错误码给我们提供了一种快速过滤问题的方法。如HTTP的Code，一看到5XX，我们就知道是服务端的问题，一看到4XX，就是客户端的问题。错误码给服务提供方提供了一种快速排查问题的手段，给服务消费方提供了一个分析问题的方法。\n错误码使用频率分析    错误码的调用和查询相对于错误码的修改是更高频的操作，所以在设计上会尽量减少对文档管理的错误码调用习惯的改变。但为了更好规范错误码的定义，该设计会稍微增加一点错误码修改的学习成本。\n目标和收益     保障错误码定义规范化、清晰易维护 通过制定和保证全局的错误码定义规范，使得新增错误码清晰可辨认，具备一定的可读性，且全局唯一。 QA\/PM 和客户端同学根据 code 大概了解错误原因，也可从网页直接查询错误码含义。  原则     不改变旧的错误码使用习惯，依然要支持 Go Module 错误码使用时名字可自动补全的特性，方便研发的同学调用。 要改变旧的错误码创建、修改、查询方式，规范错误码的命名和占位段。 可完全独立部署运行，可中台化（optional 可开源） 使用纯数字，最大不能超过32位 一定要做到足够简单，尽量减少 RD 在使用习惯上的改变。用户只关心简不简单，好不好用！  ",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/mgsweet.com\/go-ecms\/%E6%80%BB%E8%A7%88\/design-idea\/"
+    },
+    "copyrightHolder" : "go-ecms Doc",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-11-22T17:39:10.00Z",
+    "datePublished": "2021-11-22T17:39:10.00Z",
+    "dateModified": "2021-11-22T17:39:10.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "go-ecms Doc",
+        "url": "https://mgsweet.com/go-ecms/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/mgsweet.com\/go-ecms\/brand.svg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "url" : "https:\/\/mgsweet.com\/go-ecms\/%E6%80%BB%E8%A7%88\/design-idea\/",
+    "wordCount" : "23",
+    "genre" : [ ]
+}
+</script>
+
 
     
 
@@ -212,7 +258,7 @@
             
             
                 <span class="flex">
-                    <a href="/go-ecms/%E6%80%BB%E8%A7%88/design-idea/" class="gdoc-nav__entry ">
+                    <a href="/go-ecms/%E6%80%BB%E8%A7%88/design-idea/" class="gdoc-nav__entry is-active">
                         设计思想
                     </a>
                 </span>
@@ -644,7 +690,15 @@
         
     
     
-        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/go-ecms/' href='/go-ecms/'><span itemprop='name'>go-ecms Doc</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>总览</span><meta itemprop='position' content='3' /></li>
+        
+        
+        
+        
+    
+    
+        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/go-ecms/' href='/go-ecms/'><span itemprop='name'>go-ecms Doc</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/go-ecms/%E6%80%BB%E8%A7%88/' href='/go-ecms/%E6%80%BB%E8%A7%88/'><span itemprop='name'>总览</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>设计思想</span><meta itemprop='position' content='4' /></li>
+    
+
     
 
     
@@ -657,8 +711,50 @@
 
 
     <article class="gdoc-markdown gdoc-markdown__align--left">
-        <h1>总览</h1>
-        
+        <h1>设计思想</h1>
+        <div class="gdoc-page__anchorwrap">
+    <h2 id="错误码的价值">
+        错误码的价值
+        <a data-clipboard-text="https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/design-idea/#错误码的价值" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 错误码的价值" href="#%e9%94%99%e8%af%af%e7%a0%81%e7%9a%84%e4%bb%b7%e5%80%bc">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><p>什么是错误码的价值：错误码给我们提供了一种快速过滤问题的方法。如HTTP的Code，一看到5XX，我们就知道是服务端的问题，一看到4XX，就是客户端的问题。错误码给服务提供方提供了一种快速排查问题的手段，给服务消费方提供了一个分析问题的方法。</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="错误码使用频率分析">
+        错误码使用频率分析
+        <a data-clipboard-text="https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/design-idea/#错误码使用频率分析" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 错误码使用频率分析" href="#%e9%94%99%e8%af%af%e7%a0%81%e4%bd%bf%e7%94%a8%e9%a2%91%e7%8e%87%e5%88%86%e6%9e%90">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><p>错误码的调用和查询相对于错误码的修改是更高频的操作，所以在设计上会尽量减少对文档管理的错误码调用习惯的改变。但为了更好规范错误码的定义，该设计会稍微增加一点错误码修改的学习成本。</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="目标和收益">
+        目标和收益
+        <a data-clipboard-text="https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/design-idea/#目标和收益" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 目标和收益" href="#%e7%9b%ae%e6%a0%87%e5%92%8c%e6%94%b6%e7%9b%8a">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>保障错误码定义规范化、清晰易维护</li>
+<li>通过制定和保证全局的错误码定义规范，使得新增错误码清晰可辨认，具备一定的可读性，且全局唯一。</li>
+<li>QA/PM 和客户端同学根据 code 大概了解错误原因，也可从网页直接查询错误码含义。</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="原则">
+        原则
+        <a data-clipboard-text="https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/design-idea/#原则" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 原则" href="#%e5%8e%9f%e5%88%99">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>不改变旧的错误码使用习惯，依然要支持 Go Module 错误码使用时名字可自动补全的特性，方便研发的同学调用。</li>
+<li>要改变旧的错误码创建、修改、查询方式，规范错误码的命名和占位段。</li>
+<li>可完全独立部署运行，可中台化（optional 可开源）</li>
+<li>使用纯数字，最大不能超过32位</li>
+<li>一定要做到足够简单，尽量减少 RD 在使用习惯上的改变。用户只关心简不简单，好不好用！</li>
+</ul>
+
     </article>
 
                 
