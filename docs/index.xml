@@ -12,7 +12,7 @@
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000000/</guid>
-      <description>CommonServiceInternalError       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    通用服务内部错误 internal error
+      <description>ServiceInternalError       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    通用服务内部错误 internal error
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
@@ -22,7 +22,7 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000001/</guid>
-      <description>CommonServiceUnavailable       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务不可用 service unavailable
+      <description>ServiceUnavailable       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务不可用 service unavailable
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
@@ -32,7 +32,7 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000002/</guid>
-      <description>CommonServiceTimeout       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务自身任务超时 service timeout
+      <description>ServiceTimeout       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务自身任务超时 service timeout
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
@@ -42,7 +42,7 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000003/</guid>
-      <description>CommonServiceBusy       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务器繁忙 service is busy
+      <description>ServiceBusy       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务器繁忙 service is busy
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
@@ -52,7 +52,7 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000004/</guid>
-      <description>CommonServiceDegradation       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务降级停用 service degradation
+      <description>ServiceDegradation       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务降级停用 service degradation
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
@@ -62,7 +62,7 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000005/</guid>
-      <description>CommonServiceObsolete       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务已过期 service is obsolete
+      <description>ServiceObsolete       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务已过期 service is obsolete
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
@@ -72,17 +72,8 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000006/</guid>
-      <description>CommonServiceDependencyUnavailable       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务依赖不可达 service dependency unavailable
+      <description>ServiceDependencyUnavailable       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务依赖不可达 service dependency unavailable
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
-    </item>
-    
-    <item>
-      <title>规则用法</title>
-      <link>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/rules/</link>
-      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
-      
-      <guid>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/rules/</guid>
-      <description>设计思想     不改变旧的错误码使用习惯，依然要支持 Go Module 错误码使用时名字可自动补全的特性，方便研发的同学调用。 要改变旧的错误码创建、修改、查询方式，规范错误码的命名和占位段。 可完全独立部署运行，可中台化（optional 可开源） 使用纯数字，最大不能超过32位 一定要做到足够简单，尽量减少 RD 在使用习惯上的改变。用户只关心简不简单，好不好用！  命名规则     尽量不要带 err 或 error。例如：未授权错误应命名为 Unauthorized 而不是 UnauthorizedError 使用驼峰法命名，不要有下划线！参考：net/http/status.go  错误码分段规则     范围：进校云平台 数据类型：int32 (最长支持9位) 0 保留用作表示 成功 错误码从 10 000 000 开始设计，以保证长度相同，同时避免和框架错误码冲突。（Kite框架错误：100~1000、Mesh相关错误：1000~10000） 每个分级下错误码统一从 001 开始，000 作为分级通用错误保留（例如对错误不好定义或未知错误） 看看这个分段规则和每段位数是不是可以弄成动态配置的形式，方便推广。     平台标识 platform 服务模块 module 具体错误 specific error     (BB) (CCC) (DDD)    </description>
     </item>
     
     <item>
@@ -91,7 +82,7 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/all-error/</guid>
-      <description>common 通用 (10)    service system 服务系统 (000)       Name Code Description     CommonServiceInternalError 10000000 通用服务内部错误 internal error   CommonServiceUnavailable 10000001 服务不可用 service unavailable   CommonServiceTimeout 10000002 服务自身任务超时 service timeout   CommonServiceBusy 10000003 服务器繁忙 service is busy   CommonServiceDegradation 10000004 服务降级停用 service degradation   CommonServiceObsolete 10000005 服务已过期 service is obsolete   CommonServiceDependencyUnavailable 10000006 服务依赖不可达 service dependency unavailable    </description>
+      <description>common 通用 (10)    service system 服务系统 (000)       Name Code Description     ServiceInternalError 10000000 通用服务内部错误 internal error   ServiceUnavailable 10000001 服务不可用 service unavailable   ServiceTimeout 10000002 服务自身任务超时 service timeout   ServiceBusy 10000003 服务器繁忙 service is busy   ServiceDegradation 10000004 服务降级停用 service degradation   ServiceObsolete 10000005 服务已过期 service is obsolete   ServiceDependencyUnavailable 10000006 服务依赖不可达 service dependency unavailable    </description>
     </item>
     
   </channel>
