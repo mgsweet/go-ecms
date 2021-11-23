@@ -1,5 +1,5 @@
 # go-ecms
-Golang error code management system.
+Golang error code management system. For error code doc, see: https://mgsweet.com/go-ecms/
 
 ## Usage
 To generate both go code and site code, run:
