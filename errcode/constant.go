@@ -12,13 +12,13 @@ const (
 
 	// Platform: "common 通用"
 	// Module: "service system 服务系统", Code format: 10 000 xxx
-	CommonServiceInternalError         = 10000000 // 通用服务内部错误 internal error
-	CommonServiceUnavailable           = 10000001 // 服务不可用 service unavailable
-	CommonServiceTimeout               = 10000002 // 服务自身任务超时 service timeout
-	CommonServiceBusy                  = 10000003 // 服务器繁忙 service is busy
-	CommonServiceDegradation           = 10000004 // 服务降级停用 service degradation
-	CommonServiceObsolete              = 10000005 // 服务已过期 service is obsolete
-	CommonServiceDependencyUnavailable = 10000006 // 服务依赖不可达 service dependency unavailable
+	ServiceInternalError         = 10000000 // 通用服务内部错误 internal error
+	ServiceUnavailable           = 10000001 // 服务不可用 service unavailable
+	ServiceTimeout               = 10000002 // 服务自身任务超时 service timeout
+	ServiceBusy                  = 10000003 // 服务器繁忙 service is busy
+	ServiceDegradation           = 10000004 // 服务降级停用 service degradation
+	ServiceObsolete              = 10000005 // 服务已过期 service is obsolete
+	ServiceDependencyUnavailable = 10000006 // 服务依赖不可达 service dependency unavailable
 
 )
 
@@ -28,13 +28,13 @@ var codeDefaultDesc = map[int32]string{
 
 	// Platform: "common 通用"
 	// Module: "service system 服务系统"
-	CommonServiceInternalError:         "通用服务内部错误 internal error",
-	CommonServiceUnavailable:           "服务不可用 service unavailable",
-	CommonServiceTimeout:               "服务自身任务超时 service timeout",
-	CommonServiceBusy:                  "服务器繁忙 service is busy",
-	CommonServiceDegradation:           "服务降级停用 service degradation",
-	CommonServiceObsolete:              "服务已过期 service is obsolete",
-	CommonServiceDependencyUnavailable: "服务依赖不可达 service dependency unavailable",
+	ServiceInternalError:         "通用服务内部错误 internal error",
+	ServiceUnavailable:           "服务不可用 service unavailable",
+	ServiceTimeout:               "服务自身任务超时 service timeout",
+	ServiceBusy:                  "服务器繁忙 service is busy",
+	ServiceDegradation:           "服务降级停用 service degradation",
+	ServiceObsolete:              "服务已过期 service is obsolete",
+	ServiceDependencyUnavailable: "服务依赖不可达 service dependency unavailable",
 }
 
 // CodeDefaultDesc returns the default description for the given error code.

@@ -1,0 +1,10 @@
+specific_errors:
+  - suffix: "Fail"
+    code: "000"
+    desc: "通用请求错误"
+  - suffix: "Fail2"
+    code: "001"
+    desc: "通用请求错误"
+  - suffix: "Fail2"
+    code: "002"
+    desc: "通用请求错误"
