@@ -2,9 +2,12 @@
 Golang error code management system.
 
 ## Usage
+To generate both go code and site code, run:
+```shell
+./build.sh
+```
 
-## Dev Notes
-To run hugo in development mode:
+To run hugo site in development mode:
 ```shell
 cd ecms-site
 hugo server -D
@@ -14,6 +17,11 @@ Build:
 ```shell
 cd ecms-site
 hugo -d ../docs/
+```
+
+For Deployment, remember to change the `baseURL` in `/ecms-site` to your site:
+```toml
+baseURL = "https://your-site/"
 ```
 
 ## Credit
