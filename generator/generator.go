@@ -39,11 +39,29 @@ func generateSiteCode(platforms []Platform, templateDir, outputDir string) {
 
 	err = f.Close()
 	if err != nil {
-		return
+		panic(err)
 	}
 
 	// Generate single page for each error
 	for _, platform := range platforms {
+		platformMdPath := fmt.Sprintf("%s/content/02 全部错误码/(%s) %s/",
+			outputDir, platform.Code, platform.Name)
+		// Ensure the directory exists
+		err := os.MkdirAll(platformMdPath, os.ModePerm)
+		if err != nil {
+			panic(err)
+		}
+
+		// Create _index.md for platform
+		_indexFile, err := os.Create(platformMdPath + "_index.md") // ignore_security_alert
+		if err != nil {
+			panic(err)
+		}
+		err = _indexFile.Close()
+		if err != nil {
+			panic(err)
+		}
+		// create page for each error.
 		for _, module := range platform.Modules {
 			for _, specificError := range module.SpecificErrors {
 				singleErrorTmpl, err := template.ParseFiles(templateDir + "single-error.md.tpl")
@@ -54,7 +72,7 @@ func generateSiteCode(platforms []Platform, templateDir, outputDir string) {
 				errCode := platform.Code + module.Code + specificError.Code
 				errName := platform.Prefix + module.Prefix + specificError.Name
 
-				f, err := os.Create(fmt.Sprintf("%s/content/02 全部错误码/%s.md", outputDir, errCode)) // ignore_security_alert
+				f, err := os.Create(platformMdPath + errCode + ".md") // ignore_security_alert
 				if err != nil {
 					panic(err)
 				}
@@ -79,7 +97,7 @@ func generateSiteCode(platforms []Platform, templateDir, outputDir string) {
 
 				err = f.Close()
 				if err != nil {
-					return
+					panic(err)
 				}
 			}
 		}
@@ -102,7 +120,7 @@ func generateGoCode(platforms []Platform, templateFile, outputFile string) {
 
 	err = f.Close()
 	if err != nil {
-		return
+		panic(err)
 	}
 }
 
