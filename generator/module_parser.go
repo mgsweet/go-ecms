@@ -2,6 +2,7 @@ package generator
 
 import (
 	"io/ioutil"
+	"path/filepath"
 
 	"gopkg.in/yaml.v3"
 )
@@ -19,7 +20,7 @@ type Modules struct {
 }
 
 func GetModules(dir string) []Module {
-	yamlFile, err := ioutil.ReadFile(dir + "config.yaml")
+	yamlFile, err := ioutil.ReadFile(filepath.Join(dir, "config.yaml"))
 	if err != nil {
 		panic(err)
 	}
@@ -32,7 +33,7 @@ func GetModules(dir string) []Module {
 	}
 
 	for i, module := range modules.Modules {
-		modules.Modules[i].SpecificErrors = GetSpecificErrors(dir + module.File)
+		modules.Modules[i].SpecificErrors = GetSpecificErrors(filepath.Join(dir, module.File))
 	}
 
 	return modules.Modules

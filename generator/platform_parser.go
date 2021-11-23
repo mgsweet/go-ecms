@@ -2,6 +2,7 @@ package generator
 
 import (
 	"io/ioutil"
+	"path/filepath"
 
 	"gopkg.in/yaml.v3"
 )
@@ -19,7 +20,7 @@ type Platforms struct {
 }
 
 func GetPlatforms(dir string) []Platform {
-	yamlFile, err := ioutil.ReadFile(dir + "config.yaml")
+	yamlFile, err := ioutil.ReadFile(filepath.Join(dir, "config.yaml"))
 	if err != nil {
 		panic(err)
 	}
@@ -32,7 +33,7 @@ func GetPlatforms(dir string) []Platform {
 	}
 
 	for i, platform := range platforms.Platforms {
-		platforms.Platforms[i].Modules = GetModules(dir + platform.Dir)
+		platforms.Platforms[i].Modules = GetModules(filepath.Join(dir, platform.Dir))
 	}
 
 	return platforms.Platforms
