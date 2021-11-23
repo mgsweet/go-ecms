@@ -12,7 +12,7 @@
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/all-error/</guid>
-      <description>common 通用 (10)    service system 服务系统 (000)       Name Code Description     ServiceInternalError 10000000 通用服务内部错误 internal error   ServiceUnavailable 10000001 服务不可用 service unavailable   ServiceTimeout 10000002 服务自身任务超时 service timeout   ServiceBusy 10000003 服务器繁忙 service is busy   ServiceDegradation 10000004 服务降级停用 service degradation   ServiceObsolete 10000005 服务已过期 service is obsolete   ServiceDependencyUnavailable 10000006 服务依赖不可达 service dependency unavailable    </description>
+      <description>common 通用 (10)    service system 服务系统 (000)       Name Code Description     ServiceInternalError 10000000 Internal error 通用服务内部错误   ServiceUnavailable 10000001 Service unavailable 服务不可用   ServiceTimeout 10000002 Service timeout 服务自身任务超时   ServiceBusy 10000003 Service is busy 服务器繁忙   ServiceDegradation 10000004 Service degradation 服务降级停用   ServiceObsolete 10000005 Service is obsolete 服务已过期   ServiceDependencyUnavailable 10000006 Service dependency unavailable 服务依赖不可达    request error 请求错误 (001)       Name Code Description     ReqFail 10001000 Common request fail 通用请求错误   ReqSvcNotFound 10001001 Service not found 通用请求错误   ReqTooFrequent 10001002 Request too frequent 请求太频繁   ReqDuplicateOperation 10001003 Duplicate Operation 重复操作    </description>
     </item>
     
   </channel>

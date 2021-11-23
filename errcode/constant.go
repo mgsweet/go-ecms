@@ -12,13 +12,18 @@ const (
 
 	// Platform: "common 通用"
 	// Module: "service system 服务系统", Code format: 10 000 xxx
-	ServiceInternalError         = 10000000 // 通用服务内部错误 internal error
-	ServiceUnavailable           = 10000001 // 服务不可用 service unavailable
-	ServiceTimeout               = 10000002 // 服务自身任务超时 service timeout
-	ServiceBusy                  = 10000003 // 服务器繁忙 service is busy
-	ServiceDegradation           = 10000004 // 服务降级停用 service degradation
-	ServiceObsolete              = 10000005 // 服务已过期 service is obsolete
-	ServiceDependencyUnavailable = 10000006 // 服务依赖不可达 service dependency unavailable
+	ServiceInternalError         = 10000000 // Internal error 通用服务内部错误
+	ServiceUnavailable           = 10000001 // Service unavailable 服务不可用
+	ServiceTimeout               = 10000002 // Service timeout 服务自身任务超时
+	ServiceBusy                  = 10000003 // Service is busy 服务器繁忙
+	ServiceDegradation           = 10000004 // Service degradation 服务降级停用
+	ServiceObsolete              = 10000005 // Service is obsolete 服务已过期
+	ServiceDependencyUnavailable = 10000006 // Service dependency unavailable 服务依赖不可达
+	// Module: "request error 请求错误", Code format: 10 001 xxx
+	ReqFail               = 10001000 // Common request fail 通用请求错误
+	ReqSvcNotFound        = 10001001 // Service not found 通用请求错误
+	ReqTooFrequent        = 10001002 // Request too frequent 请求太频繁
+	ReqDuplicateOperation = 10001003 // Duplicate Operation 重复操作
 
 )
 
@@ -28,13 +33,18 @@ var codeDefaultDesc = map[int32]string{
 
 	// Platform: "common 通用"
 	// Module: "service system 服务系统"
-	ServiceInternalError:         "通用服务内部错误 internal error",
-	ServiceUnavailable:           "服务不可用 service unavailable",
-	ServiceTimeout:               "服务自身任务超时 service timeout",
-	ServiceBusy:                  "服务器繁忙 service is busy",
-	ServiceDegradation:           "服务降级停用 service degradation",
-	ServiceObsolete:              "服务已过期 service is obsolete",
-	ServiceDependencyUnavailable: "服务依赖不可达 service dependency unavailable",
+	ServiceInternalError:         "Internal error 通用服务内部错误",
+	ServiceUnavailable:           "Service unavailable 服务不可用",
+	ServiceTimeout:               "Service timeout 服务自身任务超时",
+	ServiceBusy:                  "Service is busy 服务器繁忙",
+	ServiceDegradation:           "Service degradation 服务降级停用",
+	ServiceObsolete:              "Service is obsolete 服务已过期",
+	ServiceDependencyUnavailable: "Service dependency unavailable 服务依赖不可达",
+	// Module: "request error 请求错误"
+	ReqFail:               "Common request fail 通用请求错误",
+	ReqSvcNotFound:        "Service not found 通用请求错误 ",
+	ReqTooFrequent:        "Request too frequent 请求太频繁",
+	ReqDuplicateOperation: "Duplicate Operation 重复操作",
 }
 
 // CodeDefaultDesc returns the default description for the given error code.

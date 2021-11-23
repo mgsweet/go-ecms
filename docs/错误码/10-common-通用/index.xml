@@ -12,7 +12,7 @@
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000000/</guid>
-      <description>ServiceInternalError       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    通用服务内部错误 internal error
+      <description>ServiceInternalError       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    Internal error 通用服务内部错误
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
@@ -22,7 +22,7 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000001/</guid>
-      <description>ServiceUnavailable       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务不可用 service unavailable
+      <description>ServiceUnavailable       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    Service unavailable 服务不可用
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
@@ -32,7 +32,7 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000002/</guid>
-      <description>ServiceTimeout       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务自身任务超时 service timeout
+      <description>ServiceTimeout       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    Service timeout 服务自身任务超时
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
@@ -42,7 +42,7 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000003/</guid>
-      <description>ServiceBusy       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务器繁忙 service is busy
+      <description>ServiceBusy       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    Service is busy 服务器繁忙
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
@@ -52,7 +52,7 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000004/</guid>
-      <description>ServiceDegradation       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务降级停用 service degradation
+      <description>ServiceDegradation       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    Service degradation 服务降级停用
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
@@ -62,7 +62,7 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000005/</guid>
-      <description>ServiceObsolete       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务已过期 service is obsolete
+      <description>ServiceObsolete       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    Service is obsolete 服务已过期
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
@@ -72,7 +72,47 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10000006/</guid>
-      <description>ServiceDependencyUnavailable       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务依赖不可达 service dependency unavailable
+      <description>ServiceDependencyUnavailable       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    Service dependency unavailable 服务依赖不可达
+Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
+    </item>
+    
+    <item>
+      <title>10001000</title>
+      <link>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001000/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001000/</guid>
+      <description>ReqFail       Platform Module     common 通用 (10) request error 请求错误 (001)    Description    Common request fail 通用请求错误
+Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
+    </item>
+    
+    <item>
+      <title>10001001</title>
+      <link>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001001/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001001/</guid>
+      <description>ReqSvcNotFound       Platform Module     common 通用 (10) request error 请求错误 (001)    Description    Service not found 通用请求错误
+Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
+    </item>
+    
+    <item>
+      <title>10001002</title>
+      <link>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001002/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001002/</guid>
+      <description>ReqTooFrequent       Platform Module     common 通用 (10) request error 请求错误 (001)    Description    Request too frequent 请求太频繁
+Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
+    </item>
+    
+    <item>
+      <title>10001003</title>
+      <link>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001003/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001003/</guid>
+      <description>ReqDuplicateOperation       Platform Module     common 通用 (10) request error 请求错误 (001)    Description    Duplicate Operation 重复操作
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
