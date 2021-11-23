@@ -15,7 +15,7 @@ func GenerateCode() {
 	checkValid(platforms)
 
 	generateGoCode(platforms, "templates/constant.go.tpl", "errcode/constant.go")
-	generateSiteCode(platforms, "templates/", "ecms_site/")
+	generateSiteCode(platforms, "templates/", "docs/")
 }
 
 // generateSiteCode generate site code
