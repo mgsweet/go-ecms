@@ -2,76 +2,76 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>02 全部错误码 on go-ecms Doc</title>
-    <link>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/</link>
+    <link>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/</link>
     <description>Recent content in 02 全部错误码 on go-ecms Doc</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 22 Nov 2021 17:39:10 +0800</lastBuildDate><atom:link href="http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Nov 2021 17:39:10 +0800</lastBuildDate><atom:link href="https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>10000000</title>
-      <link>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000000/</link>
+      <link>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000000/</link>
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
-      <guid>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000000/</guid>
+      <guid>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000000/</guid>
       <description>CommonServiceInternalError       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    通用服务内部错误 internal error
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
     <item>
       <title>10000001</title>
-      <link>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000001/</link>
+      <link>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000001/</link>
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
-      <guid>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000001/</guid>
+      <guid>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000001/</guid>
       <description>CommonServiceUnavailable       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务不可用 service unavailable
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
     <item>
       <title>10000002</title>
-      <link>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000002/</link>
+      <link>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000002/</link>
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
-      <guid>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000002/</guid>
+      <guid>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000002/</guid>
       <description>CommonServiceTimeout       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务自身任务超时 service timeout
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
     <item>
       <title>10000003</title>
-      <link>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000003/</link>
+      <link>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000003/</link>
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
-      <guid>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000003/</guid>
+      <guid>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000003/</guid>
       <description>CommonServiceBusy       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务器繁忙 service is busy
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
     <item>
       <title>10000004</title>
-      <link>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000004/</link>
+      <link>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000004/</link>
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
-      <guid>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000004/</guid>
+      <guid>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000004/</guid>
       <description>CommonServiceDegradation       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务降级停用 service degradation
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
     <item>
       <title>10000005</title>
-      <link>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000005/</link>
+      <link>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000005/</link>
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
-      <guid>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000005/</guid>
+      <guid>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000005/</guid>
       <description>CommonServiceObsolete       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务已过期 service is obsolete
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>
     
     <item>
       <title>10000006</title>
-      <link>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000006/</link>
+      <link>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000006/</link>
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
-      <guid>http://localhost/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000006/</guid>
+      <guid>https://mgsweet.com/go-ecms/02-%E5%85%A8%E9%83%A8%E9%94%99%E8%AF%AF%E7%A0%81/10000006/</guid>
       <description>CommonServiceDependencyUnavailable       Platform Module     common 通用 (10) service system 服务系统 (000)    Description    服务依赖不可达 service dependency unavailable
 Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
     </item>

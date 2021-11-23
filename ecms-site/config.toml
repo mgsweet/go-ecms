@@ -1,6 +1,7 @@
-baseURL = "http://localhost"
+baseURL = "https://mgsweet.com/go-ecms/"
 title = "go-ecms Doc"
 theme = "hugo-geekdoc"
+publishDir = "../docs/"
 
 pluralizeListTitles = false
 
