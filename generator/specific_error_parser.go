@@ -7,9 +7,9 @@ import (
 )
 
 type SpecificError struct {
-	Name string `yaml:"name"`
-	Code string `yaml:"code"`
-	Desc string `yaml:"desc"`
+	Suffix string `yaml:"suffix"`
+	Code   string `yaml:"code"`
+	Desc   string `yaml:"desc"`
 }
 
 type SpecificErrors struct {

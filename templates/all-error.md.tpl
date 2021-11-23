@@ -6,5 +6,5 @@ date: 2021-11-22T17:39:10+08:00
 {{range $module := $platform.Modules}}### {{$module.Name}} ({{$module.Code}})
 | Name                       | Code     | Description                     |
 |----------------------------|----------|---------------------------------|
-{{range $specificError := $module.SpecificErrors}}| {{ $platform.Prefix }}{{ $module.Prefix }}{{ $specificError.Name }} | {{ $platform.Code }}{{ $module.Code }}{{ $specificError.Code }} | {{$specificError.Desc}} |
+{{range $specificError := $module.SpecificErrors}}| {{ $platform.Prefix }}{{ $module.Prefix }}{{ $specificError.Suffix }} | {{ $platform.Code }}{{ $module.Code }}{{ $specificError.Code }} | {{$specificError.Desc}} |
 {{end}}{{end}}{{end}}
