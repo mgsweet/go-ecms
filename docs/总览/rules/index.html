@@ -10,11 +10,11 @@
 
 
 
-    <meta name="description" content="go-ecms Doc">
+    <meta name="description" content="设计思想     不改变旧的错误码使用习惯，依然要支持 Go Module 错误码使用时名字可自动补全的特性，方便研发的同学调用。 要改变旧的错误码创建、修改、查询方式，规范错误码的命名和占位段。 可完全独立部署运行，可中台化（optional 可开源） 使用纯数字，最大不能超过32位 一定要做到足够简单，尽量减少 RD 在使用习惯上的改变。用户只关心简不简单，好不好用！  命名规则     尽量不要带 err 或 error。例如：未授权错误应命名为 Unauthorized 而不是 UnauthorizedError 使用驼峰法命名，不要有下划线！参考：net/http/status.go  错误码分段规则     范围：进校云平台 数据类型：int32 (最长支持9位) 0 保留用作表示 成功 错误码从 10 000 000 开始设计，以保证长度相同，同时避免和框架错误码冲突。（Kite框架错误：100~1000、Mesh相关错误：1000~10000） 每个分级下错误码统一从 001 开始，000 作为分级通用错误保留（例如对错误不好定义或未知错误） 看看这个分段规则和每段位数是不是可以弄成动态配置的形式，方便推广。     平台标识 platform 服务模块 module 具体错误 specific error     (BB) (CCC) (DDD)    ">
 
 
 
-    <title>Tags | go-ecms Doc</title>
+    <title>规则用法 | go-ecms Doc</title>
 
     <link rel="icon" type="image/svg+xml" href="/go-ecms/favicon/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/go-ecms/favicon/favicon-32x32.png">
@@ -22,15 +22,17 @@
 
     
 
-    <meta property="og:title" content="Tags" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://mgsweet.com/go-ecms/tags/" />
+    <meta property="og:title" content="规则用法" />
+<meta property="og:description" content="设计思想     不改变旧的错误码使用习惯，依然要支持 Go Module 错误码使用时名字可自动补全的特性，方便研发的同学调用。 要改变旧的错误码创建、修改、查询方式，规范错误码的命名和占位段。 可完全独立部署运行，可中台化（optional 可开源） 使用纯数字，最大不能超过32位 一定要做到足够简单，尽量减少 RD 在使用习惯上的改变。用户只关心简不简单，好不好用！  命名规则     尽量不要带 err 或 error。例如：未授权错误应命名为 Unauthorized 而不是 UnauthorizedError 使用驼峰法命名，不要有下划线！参考：net/http/status.go  错误码分段规则     范围：进校云平台 数据类型：int32 (最长支持9位) 0 保留用作表示 成功 错误码从 10 000 000 开始设计，以保证长度相同，同时避免和框架错误码冲突。（Kite框架错误：100~1000、Mesh相关错误：1000~10000） 每个分级下错误码统一从 001 开始，000 作为分级通用错误保留（例如对错误不好定义或未知错误） 看看这个分段规则和每段位数是不是可以弄成动态配置的形式，方便推广。     平台标识 platform 服务模块 module 具体错误 specific error     (BB) (CCC) (DDD)    " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/rules/" /><meta property="article:section" content="总览" />
+<meta property="article:published_time" content="2021-11-22T17:39:10+08:00" />
+<meta property="article:modified_time" content="2021-11-22T17:39:10+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="规则用法"/>
+<meta name="twitter:description" content="设计思想     不改变旧的错误码使用习惯，依然要支持 Go Module 错误码使用时名字可自动补全的特性，方便研发的同学调用。 要改变旧的错误码创建、修改、查询方式，规范错误码的命名和占位段。 可完全独立部署运行，可中台化（optional 可开源） 使用纯数字，最大不能超过32位 一定要做到足够简单，尽量减少 RD 在使用习惯上的改变。用户只关心简不简单，好不好用！  命名规则     尽量不要带 err 或 error。例如：未授权错误应命名为 Unauthorized 而不是 UnauthorizedError 使用驼峰法命名，不要有下划线！参考：net/http/status.go  错误码分段规则     范围：进校云平台 数据类型：int32 (最长支持9位) 0 保留用作表示 成功 错误码从 10 000 000 开始设计，以保证长度相同，同时避免和框架错误码冲突。（Kite框架错误：100~1000、Mesh相关错误：1000~10000） 每个分级下错误码统一从 001 开始，000 作为分级通用错误保留（例如对错误不好定义或未知错误） 看看这个分段规则和每段位数是不是可以弄成动态配置的形式，方便推广。     平台标识 platform 服务模块 module 具体错误 specific error     (BB) (CCC) (DDD)    "/>
 
 
     <script src="/go-ecms/js/darkmode-ce906ea916.min.js"></script>
@@ -55,6 +57,44 @@
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
     
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "TechArticle",
+    "articleSection": "总览",
+    "name": "规则用法",
+    "headline": "规则用法",
+    "alternativeHeadline": "",
+    "description": "设计思想     不改变旧的错误码使用习惯，依然要支持 Go Module 错误码使用时名字可自动补全的特性，方便研发的同学调用。 要改变旧的错误码创建、修改、查询方式，规范错误码的命名和占位段。 可完全独立部署运行，可中台化（optional 可开源） 使用纯数字，最大不能超过32位 一定要做到足够简单，尽量减少 RD 在使用习惯上的改变。用户只关心简不简单，好不好用！  命名规则     尽量不要带 err 或 error。例如：未授权错误应命名为 Unauthorized 而不是 UnauthorizedError 使用驼峰法命名，不要有下划线！参考：net\/http\/status.go  错误码分段规则     范围：进校云平台 数据类型：int32 (最长支持9位) 0 保留用作表示 成功 错误码从 10 000 000 开始设计，以保证长度相同，同时避免和框架错误码冲突。（Kite框架错误：100~1000、Mesh相关错误：1000~10000） 每个分级下错误码统一从 001 开始，000 作为分级通用错误保留（例如对错误不好定义或未知错误） 看看这个分段规则和每段位数是不是可以弄成动态配置的形式，方便推广。     平台标识 platform 服务模块 module 具体错误 specific error     (BB) (CCC) (DDD)    ",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/mgsweet.com\/go-ecms\/%E6%80%BB%E8%A7%88\/rules\/"
+    },
+    "copyrightHolder" : "go-ecms Doc",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-11-22T17:39:10.00Z",
+    "datePublished": "2021-11-22T17:39:10.00Z",
+    "dateModified": "2021-11-22T17:39:10.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "go-ecms Doc",
+        "url": "https://mgsweet.com/go-ecms/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/mgsweet.com\/go-ecms\/brand.svg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "url" : "https:\/\/mgsweet.com\/go-ecms\/%E6%80%BB%E8%A7%88\/rules\/",
+    "wordCount" : "48",
+    "genre" : [ ]
+}
+</script>
+
 
     
 
@@ -188,7 +228,7 @@
             
             
                 <span class="flex">
-                    <a href="/go-ecms/%E6%80%BB%E8%A7%88/rules/" class="gdoc-nav__entry ">
+                    <a href="/go-ecms/%E6%80%BB%E8%A7%88/rules/" class="gdoc-nav__entry is-active">
                         规则用法
                     </a>
                 </span>
@@ -495,6 +535,115 @@
             <div class="gdoc-page">
                 
     
+
+
+    
+
+
+
+
+
+
+<div class="gdoc-page__header flex flex-wrap
+     justify-between 
+     hidden-mobile 
+    " itemprop="breadcrumb">
+    
+    <div>
+        <svg class="icon gdoc_path hidden-mobile"><use xlink:href="#gdoc_path"></use></svg>
+        <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+            
+            
+            
+            
+    
+    
+        
+        
+        
+        
+    
+    
+        
+        
+        
+        
+    
+    
+        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/go-ecms/' href='/go-ecms/'><span itemprop='name'>go-ecms Doc</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/go-ecms/%E6%80%BB%E8%A7%88/' href='/go-ecms/%E6%80%BB%E8%A7%88/'><span itemprop='name'>总览</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>规则用法</span><meta itemprop='position' content='4' /></li>
+    
+
+    
+
+    
+
+        </ol>
+    </div>
+    
+    
+</div>
+
+
+    <article class="gdoc-markdown gdoc-markdown__align--left">
+        <h1>规则用法</h1>
+        <div class="gdoc-page__anchorwrap">
+    <h2 id="设计思想">
+        设计思想
+        <a data-clipboard-text="https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/rules/#设计思想" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 设计思想" href="#%e8%ae%be%e8%ae%a1%e6%80%9d%e6%83%b3">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>不改变旧的错误码使用习惯，依然要支持 Go Module 错误码使用时名字可自动补全的特性，方便研发的同学调用。</li>
+<li>要改变旧的错误码创建、修改、查询方式，规范错误码的命名和占位段。</li>
+<li>可完全独立部署运行，可中台化（optional 可开源）</li>
+<li>使用纯数字，最大不能超过32位</li>
+<li>一定要做到足够简单，尽量减少 RD 在使用习惯上的改变。用户只关心简不简单，好不好用！</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="命名规则">
+        命名规则
+        <a data-clipboard-text="https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/rules/#命名规则" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 命名规则" href="#%e5%91%bd%e5%90%8d%e8%a7%84%e5%88%99">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>尽量不要带 err 或 error。例如：未授权错误应命名为 Unauthorized 而不是 UnauthorizedError</li>
+<li>使用驼峰法命名，不要有下划线！参考：<a class="gdoc-markdown__link" href="https://golang.org/src/net/http/status.go">net/http/status.go</a></li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="错误码分段规则">
+        错误码分段规则
+        <a data-clipboard-text="https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/rules/#错误码分段规则" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 错误码分段规则" href="#%e9%94%99%e8%af%af%e7%a0%81%e5%88%86%e6%ae%b5%e8%a7%84%e5%88%99">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>范围：进校云平台</li>
+<li>数据类型：int32 (最长支持9位)</li>
+<li>0 保留用作表示 成功</li>
+<li>错误码从 10 000 000 开始设计，以保证长度相同，同时避免和框架错误码冲突。（Kite框架错误：100~1000、Mesh相关错误：1000~10000）</li>
+<li>每个分级下错误码统一从 001 开始，000 作为分级通用错误保留（例如对错误不好定义或未知错误）</li>
+<li>看看这个分段规则和每段位数是不是可以弄成动态配置的形式，方便推广。</li>
+</ul>
+<div class=table-wrap> <table>
+<thead>
+<tr>
+<th>平台标识 platform</th>
+<th>服务模块 module</th>
+<th>具体错误 specific error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(BB)</td>
+<td>(CCC)</td>
+<td>(DDD)</td>
+</tr>
+</tbody>
+</table> </div>
+
+    </article>
 
                 
 

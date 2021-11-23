@@ -26,7 +26,7 @@ func generateSiteCode(platforms []Platform, templateDir, outputDir string) {
 		panic(err)
 	}
 
-	f, err := os.Create(outputDir + "content/01 总览/all-error.md") // ignore_security_alert
+	f, err := os.Create(outputDir + "content/总览/all-error.md") // ignore_security_alert
 	if err != nil {
 		panic(err)
 	}
@@ -44,7 +44,7 @@ func generateSiteCode(platforms []Platform, templateDir, outputDir string) {
 
 	// Generate single page for each error
 	for _, platform := range platforms {
-		platformMdPath := fmt.Sprintf("%s/content/02 全部错误码/(%s) %s/",
+		platformMdPath := fmt.Sprintf("%s/content/错误码/(%s) %s/",
 			outputDir, platform.Code, platform.Name)
 		// Ensure the directory exists
 		err := os.MkdirAll(platformMdPath, os.ModePerm)
