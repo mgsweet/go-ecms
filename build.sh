@@ -5,5 +5,5 @@ go run go_code_gen.go
 go fmt errcode/constant.go
 echo "Building site code..."
 cd ecms-site
-hugo -d ../doc/
+hugo -d ../docs/
 cd ..
