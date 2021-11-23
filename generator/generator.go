@@ -4,28 +4,36 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"strconv"
 	"text/template"
 )
 
-// GenerateCode generates the code for both go constant file and static site.
+// GenerateCode generates the code for both go constant file and static site based on given yaml configurations.
 func GenerateCode() {
 	platformDir := "platforms"
 	templateDir := "templates"
 	outputGoCodeDir := "errcode"
 	siteDir := "ecms-site"
 
-	// Check if the constant name already exists. Constant name need to be global unique
+	// parse yaml files
 	platforms := GetPlatforms(platformDir)
 
-	checkValid(platforms)
+	// do some validation
+	if err := CheckValid(platforms); err != nil {
+		panic(err)
+	}
 
-	generateGoCode(platforms, filepath.Join(templateDir, "constant.go.tpl"),
-		filepath.Join(outputGoCodeDir, "constant.go"))
-	generateSiteCode(platforms, templateDir, siteDir)
+	// generate go code
+	if err := generateGoCode(platforms, filepath.Join(templateDir, "constant.go.tpl"),
+		filepath.Join(outputGoCodeDir, "constant.go")); err != nil {
+		panic(err)
+	}
+
+	// generate site code
+	if err := generateSiteCode(platforms, templateDir, siteDir); err != nil {
+		panic(err)
+	}
 }
 
-// generateSiteCode generate site code
 func generateSiteCode(platforms []Platform, templateDir, siteDir string) error {
 	// Generate page contain all errors
 	if err := generateErrorSummaryPage(platforms, templateDir, siteDir); err != nil {
@@ -95,7 +103,6 @@ func generateSiteCode(platforms []Platform, templateDir, siteDir string) error {
 	return nil
 }
 
-// generateErrorSummaryPage Generate a page contain all errors
 func generateErrorSummaryPage(platforms []Platform, templateDir, siteDir string) error {
 	allErrorTmpl, err := template.ParseFiles(filepath.Join(templateDir, "all-error.md.tpl"))
 	if err != nil {
@@ -153,38 +160,6 @@ func ensureDirExist(dir string) error {
 	err := os.MkdirAll(dir, os.ModePerm)
 	if err != nil {
 		return err
-	}
-	return nil
-}
-
-// checkValid Check whether there is conflict before rewrite <constant file>, will panic if there is conflict
-func checkValid(platforms []Platform) error {
-	// Check if the constant name already exists. Constant name need to be global unique
-	nameCheck := make(map[string]struct{})
-	codeCheck := make(map[int32]struct{})
-	for _, platform := range platforms {
-		for _, module := range platform.Modules {
-			for _, specificError := range module.SpecificErrors {
-				constantName := platform.Prefix + module.Prefix + specificError.Suffix
-				constantCode, err := strconv.ParseInt(platform.Code+module.Code+specificError.Code, 10, 32)
-				if err != nil {
-					return fmt.Errorf("the composed error code of %v cannot be parsed into int32. (platform: %v, module: %v, error suffix: %v)",
-						constantName, platform.Name, module.Name, specificError.Suffix)
-				}
-
-				_, exist := nameCheck[constantName]
-				if exist {
-					return fmt.Errorf("constant name '%v' already exists", constantName)
-				}
-				_, exist = codeCheck[int32(constantCode)]
-				if exist {
-					return fmt.Errorf("constant code '%v' already exists", constantCode)
-				}
-
-				nameCheck[constantName] = struct{}{}
-				codeCheck[int32(constantCode)] = struct{}{}
-			}
-		}
 	}
 	return nil
 }
