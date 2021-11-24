@@ -19,6 +19,7 @@ func main() {
 	switch mode {
 	case "1\n":
 		generator.RegisterPlatform()
+		fmt.Println("Done")
 	case "2\n":
 		fmt.Println("WIP")
 		return

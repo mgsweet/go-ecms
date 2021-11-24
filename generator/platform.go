@@ -3,8 +3,10 @@ package generator
 import (
 	"fmt"
 	"io/ioutil"
+	"os"
 	"path/filepath"
 	"strconv"
+	"text/template"
 
 	"gopkg.in/yaml.v3"
 )
@@ -65,23 +67,30 @@ func GetPlatforms(dir string) []Platform {
 }
 
 // SavePlatformsToYaml saves the platforms to a yaml file
-func SavePlatformsToYaml(platforms []Platform, file string) error {
-	platformsYaml, err := yaml.Marshal(Platforms{
-		Platforms: platforms,
-	})
+func (ps *Platforms) SavePlatformsToYaml(templateFile, outputFile string) error {
+	tmpl, err := template.ParseFiles(templateFile)
 	if err != nil {
 		return err
 	}
 
-	err = ioutil.WriteFile(file, platformsYaml, 0644) // ignore_security_alert
+	f, err := os.Create(outputFile) // ignore_security_alert
 	if err != nil {
 		return err
 	}
+
+	if err = tmpl.Execute(f, ps.Platforms); err != nil {
+		return err
+	}
+
+	if err = f.Close(); err != nil {
+		return err
+	}
+
 	return nil
 }
 
 // Register create platform dir and edit config.yaml in the given directory
-func (p *Platform) Register(platformDir string) error {
+func (p *Platform) Register(platformDir, configTemplateFile string) error {
 
 	// Validate the platform
 	if err := p.Check(); err != nil {
@@ -103,7 +112,10 @@ func (p *Platform) Register(platformDir string) error {
 	}
 
 	// Edit config.yaml
-	if err := SavePlatformsToYaml(platforms, filepath.Join(platformDir, "config.yaml")); err != nil {
+	ps := Platforms{
+		Platforms: platforms,
+	}
+	if err := ps.SavePlatformsToYaml(configTemplateFile, filepath.Join(platformDir, "config.yaml")); err != nil {
 		return err
 	}
 	return nil

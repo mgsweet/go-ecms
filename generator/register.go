@@ -4,10 +4,12 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"path/filepath"
 )
 
 func RegisterPlatform() {
 	platformDir := "platforms"
+	templateDir := "templates"
 	reader := bufio.NewReader(os.Stdin)
 	platforms := GetPlatforms(platformDir)
 	platformCodeLenLimit := 2
@@ -51,7 +53,7 @@ func RegisterPlatform() {
 		Dir:    dir,
 	}
 
-	if err := newPlatform.Register(platformDir); err != nil {
+	if err := newPlatform.Register(platformDir, filepath.Join(templateDir, "platformConfig.yaml.tpl")); err != nil {
 		panic(err)
 	}
 }
