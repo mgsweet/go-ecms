@@ -94,7 +94,7 @@ func (p *Platform) Register(platformDir, configTemplateFile string) error {
 
 	// Validate the platform
 	if err := p.Check(); err != nil {
-		panic(err)
+		return err
 	}
 	// Check if the platform already exists
 	platforms := GetPlatforms(platformDir)
@@ -107,7 +107,7 @@ func (p *Platform) Register(platformDir, configTemplateFile string) error {
 	platforms = append(platforms, *p)
 
 	// Create platform directory
-	if err := EnsureDirExist(filepath.Join(platformDir, p.Name)); err != nil {
+	if err := EnsureDirExist(filepath.Join(platformDir, p.Dir)); err != nil {
 		return err
 	}
 

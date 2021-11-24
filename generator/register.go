@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 func RegisterPlatform() {
@@ -27,18 +28,21 @@ func RegisterPlatform() {
 	if err != nil {
 		panic(err)
 	}
+	name = strings.Trim(name, "\n")
 
 	fmt.Println("Platform prefix (e,g Org): ")
 	prefix, err := reader.ReadString('\n')
 	if err != nil {
 		panic(err)
 	}
+	prefix = strings.Trim(prefix, "\n")
 
 	fmt.Println("Platform dir (e,g organization): ")
 	dir, err := reader.ReadString('\n')
 	if err != nil {
 		panic(err)
 	}
+	dir = strings.Trim(dir, "\n")
 
 	ps := Platforms{Platforms: platforms}
 	code, err := ps.GetAvailableCode(platformCodeLenLimit)
