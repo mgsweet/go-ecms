@@ -15,7 +15,10 @@ func GenerateCode() {
 	siteDir := "ecms-site"
 
 	// parse yaml files
-	platforms := GetPlatforms(platformDir)
+	platforms, err := GetPlatforms(platformDir)
+	if err != nil {
+		panic(err)
+	}
 
 	// do some validation
 	if err := CheckValid(platforms); err != nil {

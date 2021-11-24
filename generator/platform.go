@@ -46,24 +46,27 @@ func (ps *Platforms) GetAvailableCode(length int) (string, error) {
 	return nextCode, nil
 }
 
-func GetPlatforms(dir string) []Platform {
+func GetPlatforms(dir string) ([]Platform, error) {
 	yamlFile, err := ioutil.ReadFile(filepath.Join(dir, "config.yaml"))
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	platforms := Platforms{}
 
 	err = yaml.Unmarshal(yamlFile, &platforms)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	for i, platform := range platforms.Platforms {
-		platforms.Platforms[i].Modules = GetModules(filepath.Join(dir, platform.Dir))
+		platforms.Platforms[i].Modules, err = GetModules(filepath.Join(dir, platform.Dir))
+		if err != nil {
+			fmt.Printf("Cannot get module from platform '%v' skip, %v\n", platform.Name, err.Error())
+		}
 	}
 
-	return platforms.Platforms
+	return platforms.Platforms, nil
 }
 
 // SavePlatformsToYaml saves the platforms to a yaml file
@@ -97,7 +100,10 @@ func (p *Platform) Register(platformDir, configTemplateFile string) error {
 		return err
 	}
 	// Check if the platform already exists
-	platforms := GetPlatforms(platformDir)
+	platforms, err := GetPlatforms(platformDir)
+	if err != nil {
+		return err
+	}
 	for _, platform := range platforms {
 		if platform.Name == p.Name {
 			return fmt.Errorf("Platform already registered, cannot register duplicate platform")

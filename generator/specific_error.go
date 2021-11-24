@@ -16,18 +16,18 @@ type SpecificErrors struct {
 	SpecificErrors []SpecificError `yaml:"specific_errors"`
 }
 
-func GetSpecificErrors(file string) []SpecificError {
+func GetSpecificErrors(file string) ([]SpecificError, error) {
 	yamlFile, err := ioutil.ReadFile(file)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	specificErrors := SpecificErrors{}
 
 	err = yaml.Unmarshal(yamlFile, &specificErrors)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return specificErrors.SpecificErrors
+	return specificErrors.SpecificErrors, nil
 }

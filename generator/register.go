@@ -12,7 +12,10 @@ func RegisterPlatform() {
 	platformDir := "platforms"
 	templateDir := "templates"
 	reader := bufio.NewReader(os.Stdin)
-	platforms := GetPlatforms(platformDir)
+	platforms, err := GetPlatforms(platformDir)
+	if err != nil {
+		panic(err)
+	}
 	platformCodeLenLimit := 2
 
 	fmt.Println("------ Already registered Platform List ------")

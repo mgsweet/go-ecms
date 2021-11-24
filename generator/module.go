@@ -1,6 +1,7 @@
 package generator
 
 import (
+	"fmt"
 	"io/ioutil"
 	"path/filepath"
 
@@ -19,22 +20,25 @@ type Modules struct {
 	Modules []Module `yaml:"modules"`
 }
 
-func GetModules(dir string) []Module {
+func GetModules(dir string) ([]Module, error) {
 	yamlFile, err := ioutil.ReadFile(filepath.Join(dir, "config.yaml"))
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	modules := Modules{}
 
 	err = yaml.Unmarshal(yamlFile, &modules)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	for i, module := range modules.Modules {
-		modules.Modules[i].SpecificErrors = GetSpecificErrors(filepath.Join(dir, module.File))
+		modules.Modules[i].SpecificErrors, err = GetSpecificErrors(filepath.Join(dir, module.File))
+		if err != nil {
+			fmt.Printf("Cannot get specific errors for module '%v' skip, %v\n", module.Name, err.Error())
+		}
 	}
 
-	return modules.Modules
+	return modules.Modules, nil
 }
