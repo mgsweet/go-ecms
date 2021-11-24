@@ -7,12 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 22 Nov 2021 17:39:10 +0800</lastBuildDate><atom:link href="https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>规则用法</title>
+      <title>使用方法</title>
       <link>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/usage/</link>
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/usage/</guid>
-      <description>命名规则     尽量不要带 err 或 error。例如：未授权错误应命名为 Unauthorized 而不是 UnauthorizedError 使用驼峰法命名，不要有下划线！参考：net/http/status.go 命名和描述都要遵守先英文描述后中文描述的规则。  错误码分段规则     数据类型：int32 (最长支持9位) 0 保留用作表示 成功 错误码从 10 000 000 开始设计，以保证长度相同，同时避免和框架错误码冲突。（Kite框架错误：100~1000、Mesh相关错误：1000~10000） 业务错误码从 20 000 000 开始设计，10 000 000～19 999 999 为通用错误码段。尽管没有那么多通用错误码需求，但为了可以让用户从第一个数字就能分辨出是通用错误还是业务错误，这里设计了这个区间。 每个分级下错误码建议从 001 开始，000 作为分级通用错误保留（例如对错误不好定义或未知错误）     平台标识 platform 服务模块 module 具体错误 specific error     (BB) (CCC) (DDD)    如何新增平台    以新增 组织中心 (organization) 平台为例</description>
+      <description>前提条件    If you want to build site, install Hugo. For mac with homebrew:
+brew install hugo For other platforms, see: https://gohugo.io/getting-started/installing/
+如何生成代码    To generate both go code and site code, run:
+./build.sh To build go code only, run:
+./build_go.sh To build site only, run:
+./build_site.sh 如何新增平台    以新增 组织中心 (organization) 平台为例
+ 在 platforms/ 文件夹下新增一个文件夹，文件夹名称为平台标识，例如 organization/ 在 platforms/config.yaml 填写相应配置，例如：  - name:&amp;#34;organization 组织中心&amp;#34;# 这个名字只会影响生成注释和网页文档code:&amp;#34;20&amp;#34;# 平台标识，用于生成错误码，业务相关的错误码从 20 开始, 需要注意不能和其他平台的前缀重复prefix:&amp;#34;Org&amp;#34;# 该平台下生成的错误码名字前缀，需要注意不能和其他平台的前缀重复dir:&amp;#34;organization&amp;#34;# 对应刚刚创建的文件夹名字新建文件 platforms/organization/config.</description>
+    </item>
+    
+    <item>
+      <title>规则定义</title>
+      <link>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/rules/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/rules/</guid>
+      <description>命名规则     尽量不要带 err 或 error。例如：未授权错误应命名为 Unauthorized 而不是 UnauthorizedError 使用驼峰法命名，不要有下划线！参考：net/http/status.go 命名和描述都要遵守先英文描述后中文描述的规则。  错误码分段规则     数据类型：int32 (最长支持9位) 0 保留用作表示 成功 错误码从 10 000 000 开始设计，以保证长度相同，同时避免和框架错误码冲突。（Kite框架错误：100~1000、Mesh相关错误：1000~10000） 业务错误码从 20 000 000 开始设计，10 000 000～19 999 999 为通用错误码段。尽管没有那么多通用错误码需求，但为了可以让用户从第一个数字就能分辨出是通用错误还是业务错误，这里设计了这个区间。 每个分级下错误码建议从 001 开始，000 作为分级通用错误保留（例如对错误不好定义或未知错误）     平台标识 platform 服务模块 module 具体错误 specific error     (BB) (CCC) (DDD)    </description>
     </item>
     
     <item>
