@@ -11,15 +11,15 @@ import (
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("------ Simple Register ------")
-	fmt.Println("Select a register: 1. Platform 2. Module")
+	fmt.Println("Input register num: (1:Platform 2:Module)")
 	mode, err := reader.ReadString('\n')
 	if err != nil {
 		panic(err)
 	}
 	switch mode {
-	case "1":
+	case "1\n":
 		generator.RegisterPlatform()
-	case "2":
+	case "2\n":
 		fmt.Println("WIP")
 		return
 	default:
