@@ -117,6 +117,96 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
     </item>
     
     <item>
+      <title>10001004</title>
+      <link>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001004/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001004/</guid>
+      <description>ReqOperationNotAllow       Platform Module     common 通用 (10) request error 请求错误 (001)    Description    Operation is not allow 操作不允许
+Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
+    </item>
+    
+    <item>
+      <title>10001005</title>
+      <link>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001005/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001005/</guid>
+      <description>ReqParamIllegal       Platform Module     common 通用 (10) request error 请求错误 (001)    Description    Parameter illegal 参数不合法
+Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
+    </item>
+    
+    <item>
+      <title>10001006</title>
+      <link>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001006/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001006/</guid>
+      <description>ReqLackRequiredParam       Platform Module     common 通用 (10) request error 请求错误 (001)    Description    Lack required parameters 缺少关键参数
+Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
+    </item>
+    
+    <item>
+      <title>10001007</title>
+      <link>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001007/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001007/</guid>
+      <description>ReqParseParamFail       Platform Module     common 通用 (10) request error 请求错误 (001)    Description    Fail to parse parameters 参数无法解析
+Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
+    </item>
+    
+    <item>
+      <title>10001008</title>
+      <link>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001008/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001008/</guid>
+      <description>ReqParamLengthExceed       Platform Module     common 通用 (10) request error 请求错误 (001)    Description    Parameter length exceed limit 参数长度超过限制
+Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
+    </item>
+    
+    <item>
+      <title>10001009</title>
+      <link>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001009/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001009/</guid>
+      <description>ReqPreconditionFailed       Platform Module     common 通用 (10) request error 请求错误 (001)    Description    precondition fail 不满足前提条件
+Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
+    </item>
+    
+    <item>
+      <title>10001010</title>
+      <link>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001010/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001010/</guid>
+      <description>ReqNoPrivilege       Platform Module     common 通用 (10) request error 请求错误 (001)    Description    No privilege 无权限
+Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
+    </item>
+    
+    <item>
+      <title>10001011</title>
+      <link>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001011/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001011/</guid>
+      <description>ReqUnauthorized       Platform Module     common 通用 (10) request error 请求错误 (001)    Description    Unauthorized 未授权
+Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
+    </item>
+    
+    <item>
+      <title>10001012</title>
+      <link>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001012/</link>
+      <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
+      
+      <guid>https://mgsweet.com/go-ecms/%E9%94%99%E8%AF%AF%E7%A0%81/10-common-%E9%80%9A%E7%94%A8/10001012/</guid>
+      <description>ReqForbidden       Platform Module     common 通用 (10) request error 请求错误 (001)    Description    Forbidden 禁止访问
+Solution    请检查服务系统是否正常，如果服务系统正常，请联系服务系统维护人员。(TODO)</description>
+    </item>
+    
+    <item>
       <title>规则用法</title>
       <link>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/usage/</link>
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
@@ -142,7 +232,7 @@ Solution    请检查服务系统是否正常，如果服务系统正常，请�
       <pubDate>Mon, 22 Nov 2021 17:39:10 +0800</pubDate>
       
       <guid>https://mgsweet.com/go-ecms/%E6%80%BB%E8%A7%88/all-error/</guid>
-      <description>common 通用 (10)    service system 服务系统 (000)       Name Code Description     ServiceInternalError 10000000 Internal error 通用服务内部错误   ServiceUnavailable 10000001 Service unavailable 服务不可用   ServiceTimeout 10000002 Service timeout 服务自身任务超时   ServiceBusy 10000003 Service is busy 服务器繁忙   ServiceDegradation 10000004 Service degradation 服务降级停用   ServiceObsolete 10000005 Service is obsolete 服务已过期   ServiceDependencyUnavailable 10000006 Service dependency unavailable 服务依赖不可达    request error 请求错误 (001)       Name Code Description     ReqFail 10001000 Common request fail 通用请求错误   ReqSvcNotFound 10001001 Service not found 通用请求错误   ReqTooFrequent 10001002 Request too frequent 请求太频繁   ReqDuplicateOperation 10001003 Duplicate Operation 重复操作    </description>
+      <description>common 通用 (10)    service system 服务系统 (000)       Name Code Description     ServiceInternalError 10000000 Internal error 通用服务内部错误   ServiceUnavailable 10000001 Service unavailable 服务不可用   ServiceTimeout 10000002 Service timeout 服务自身任务超时   ServiceBusy 10000003 Service is busy 服务器繁忙   ServiceDegradation 10000004 Service degradation 服务降级停用   ServiceObsolete 10000005 Service is obsolete 服务已过期   ServiceDependencyUnavailable 10000006 Service dependency unavailable 服务依赖不可达    request error 请求错误 (001)       Name Code Description     ReqFail 10001000 Common request fail 通用请求错误   ReqSvcNotFound 10001001 Service not found 通用请求错误   ReqTooFrequent 10001002 Request too frequent 请求太频繁   ReqDuplicateOperation 10001003 Duplicate Operation 重复操作   ReqOperationNotAllow 10001004 Operation is not allow 操作不允许   ReqParamIllegal 10001005 Parameter illegal 参数不合法   ReqLackRequiredParam 10001006 Lack required parameters 缺少关键参数   ReqParseParamFail 10001007 Fail to parse parameters 参数无法解析   ReqParamLengthExceed 10001008 Parameter length exceed limit 参数长度超过限制   ReqPreconditionFailed 10001009 precondition fail 不满足前提条件   ReqNoPrivilege 10001010 No privilege 无权限   ReqUnauthorized 10001011 Unauthorized 未授权   ReqForbidden 10001012 Forbidden 禁止访问    </description>
     </item>
     
   </channel>
