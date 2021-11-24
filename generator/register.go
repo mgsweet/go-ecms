@@ -22,7 +22,7 @@ func RegisterPlatform() {
 	}
 	fmt.Println()
 	fmt.Println("------ Registering new platform ------")
-	fmt.Println("Platform name (e,g organization 组织中心): ")
+	fmt.Println("Platform name (e,g Organization 组织中心): ")
 
 	name, err := reader.ReadString('\n')
 	if err != nil {
