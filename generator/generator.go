@@ -44,7 +44,7 @@ func generateSiteCode(platforms []Platform, templateDir, siteDir string) error {
 	for _, platform := range platforms {
 		platformOutputDir := filepath.Join(siteDir, "content", "错误码",
 			fmt.Sprintf("(%s) %s", platform.Code, platform.Name))
-		if err := ensureDirExist(platformOutputDir); err != nil {
+		if err := EnsureDirExist(platformOutputDir); err != nil {
 			return err
 		}
 
@@ -110,7 +110,7 @@ func generateErrorSummaryPage(platforms []Platform, templateDir, siteDir string)
 	}
 
 	outputDir := filepath.Join(siteDir, "content", "总览")
-	if err := ensureDirExist(outputDir); err != nil {
+	if err := EnsureDirExist(outputDir); err != nil {
 		return err
 	}
 
@@ -153,13 +153,5 @@ func generateGoCode(platforms []Platform, templateFile, outputFile string) error
 		return err
 	}
 
-	return nil
-}
-
-func ensureDirExist(dir string) error {
-	err := os.MkdirAll(dir, os.ModePerm)
-	if err != nil {
-		return err
-	}
 	return nil
 }

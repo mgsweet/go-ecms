@@ -20,7 +20,7 @@ func CheckValid(platforms []Platform) error {
 
 	for _, platform := range platforms {
 		// single-platform check
-		if err := checkPlatform(platform); err != nil {
+		if err := platform.Check(); err != nil {
 			return err
 		}
 
@@ -87,28 +87,6 @@ func CheckValid(platforms []Platform) error {
 				codeUniqueCheck[constantCode] = struct{}{}
 			}
 		}
-	}
-	return nil
-}
-
-func checkPlatform(platform Platform) error {
-	if platform.Code != "10" && platform.Prefix == "" {
-		return fmt.Errorf("no prefix is not allow for business related platform: %v", platform.Name)
-	}
-
-	if err := checkCode(platform.Code, 2); err != nil {
-		return fmt.Errorf("platform '%v' code '%v' is not valid, %v", platform.Name, platform.Code, err)
-	}
-
-	num, err := strconv.ParseInt(platform.Code, 10, 32)
-	if err != nil {
-		return fmt.Errorf("platform '%v' code '%v' is not valid, cannot parse code to int32",
-			platform.Name, platform.Code)
-	}
-
-	if num != 10 && num < 20 {
-		return fmt.Errorf("platform '%v' code '%v' is not valid, business related platform code can not smaller than 20",
-			platform.Name, platform.Code)
 	}
 	return nil
 }
