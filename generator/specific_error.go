@@ -1,6 +1,7 @@
 package generator
 
 import (
+	"fmt"
 	"io/ioutil"
 
 	"gopkg.in/yaml.v3"
@@ -30,4 +31,17 @@ func GetSpecificErrors(file string) ([]SpecificError, error) {
 	}
 
 	return specificErrors.SpecificErrors, nil
+}
+
+// Check if the specific error is valid
+func (se SpecificError) Check() error {
+	if se.Suffix == "" {
+		return fmt.Errorf("no suffix is not allow for specific error")
+	}
+
+	if err := CheckCode(se.Code, 3); err != nil {
+		return fmt.Errorf("specific error '%v' code '%v' is not valid, %v",
+			se.Suffix, se.Code, err)
+	}
+	return nil
 }

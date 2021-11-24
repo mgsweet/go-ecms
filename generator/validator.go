@@ -43,7 +43,7 @@ func CheckValid(platforms []Platform) error {
 		moduleCodeUniqueCheck := make(map[string]struct{})
 		for _, module := range platform.Modules {
 			// single-module check
-			if err := checkModule(module); err != nil {
+			if err := module.Check(); err != nil {
 				return err
 			}
 
@@ -61,7 +61,7 @@ func CheckValid(platforms []Platform) error {
 
 			// check specific error
 			for _, specificError := range module.SpecificErrors {
-				if err := checkSpecificError(specificError); err != nil {
+				if err := specificError.Check(); err != nil {
 					return fmt.Errorf("platform: '%v', module: '%v', specificError: '%v' is not valid, %v",
 						platform.Name, module.Name, specificError.Suffix, err)
 				}
@@ -86,42 +86,6 @@ func CheckValid(platforms []Platform) error {
 				nameUniqueCheck[constantName] = struct{}{}
 				codeUniqueCheck[constantCode] = struct{}{}
 			}
-		}
-	}
-	return nil
-}
-
-func checkModule(module Module) error {
-	if module.Prefix == "" {
-		return fmt.Errorf("no prefix is not allow for module: %v", module.Name)
-	}
-
-	if err := checkCode(module.Code, 3); err != nil {
-		return fmt.Errorf("module '%v' code '%v' is not valid, %v", module.Name, module.Code, err)
-	}
-	return nil
-}
-
-func checkSpecificError(specificError SpecificError) error {
-	if specificError.Suffix == "" {
-		return fmt.Errorf("no suffix is not allow for specific error")
-	}
-
-	if err := checkCode(specificError.Code, 3); err != nil {
-		return fmt.Errorf("specific error '%v' code '%v' is not valid, %v",
-			specificError.Suffix, specificError.Code, err)
-	}
-	return nil
-}
-
-func checkCode(code string, length int) error {
-	if len(code) != length {
-		return fmt.Errorf("the code length is not equal to %v", length)
-	}
-	// need to be all digit
-	for _, c := range code {
-		if c < '0' || c > '9' {
-			return fmt.Errorf("the code is not all digit")
 		}
 	}
 	return nil

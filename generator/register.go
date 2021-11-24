@@ -60,7 +60,7 @@ func RegisterPlatform() {
 		Dir:    dir,
 	}
 
-	if err := newPlatform.Register(platformDir, filepath.Join(templateDir, "platformConfig.yaml.tpl")); err != nil {
+	if err := newPlatform.Register(platformDir, filepath.Join(templateDir, "platform-config.yaml.tpl")); err != nil {
 		panic(err)
 	}
 }

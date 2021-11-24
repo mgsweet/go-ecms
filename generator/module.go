@@ -20,6 +20,7 @@ type Modules struct {
 	Modules []Module `yaml:"modules"`
 }
 
+// GetModules returns a list of modules by parsing files in the given directory
 func GetModules(dir string) ([]Module, error) {
 	yamlFile, err := ioutil.ReadFile(filepath.Join(dir, "config.yaml"))
 	if err != nil {
@@ -41,4 +42,16 @@ func GetModules(dir string) ([]Module, error) {
 	}
 
 	return modules.Modules, nil
+}
+
+// Check checks if the module is valid
+func (m *Module) Check() error {
+	if m.Prefix == "" {
+		return fmt.Errorf("no prefix is not allow for module: %v", m.Name)
+	}
+
+	if err := CheckCode(m.Code, 3); err != nil {
+		return fmt.Errorf("module '%v' code '%v' is not valid, %v", m.Name, m.Code, err)
+	}
+	return nil
 }

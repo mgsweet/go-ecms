@@ -23,6 +23,8 @@ type Platforms struct {
 	Platforms []Platform `yaml:"platforms"`
 }
 
+// GetAvailableCode returns an available code for a new platform.
+// Currently, it will only take the current maximum value plus one
 func (ps *Platforms) GetAvailableCode(length int) (string, error) {
 	platforms := ps.Platforms
 
@@ -46,6 +48,7 @@ func (ps *Platforms) GetAvailableCode(length int) (string, error) {
 	return nextCode, nil
 }
 
+// GetPlatforms returns a list of platforms by parsing files in the given directory
 func GetPlatforms(dir string) ([]Platform, error) {
 	yamlFile, err := ioutil.ReadFile(filepath.Join(dir, "config.yaml"))
 	if err != nil {
@@ -133,7 +136,7 @@ func (p *Platform) Check() error {
 		return fmt.Errorf("no prefix is not allow for business related platform: %v", p.Name)
 	}
 
-	if err := checkCode(p.Code, 2); err != nil {
+	if err := CheckCode(p.Code, 2); err != nil {
 		return fmt.Errorf("platform '%v' code '%v' is not valid, %v", p.Name, p.Code, err)
 	}
 
