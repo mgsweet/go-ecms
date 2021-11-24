@@ -1,16 +1,33 @@
 # go-ecms
 Golang error code management system. For error code doc, see: https://mgsweet.com/go-ecms/
 
+## Preconditions
+Install Hugo, for mac with homebrew:
+```shell
+brew install hugo
+```
+For other platforms, see: https://gohugo.io/getting-started/installing/
+
 ## Usage
 To generate both go code and site code, run:
 ```shell
 ./build.sh
 ```
 
+To build go code only, run:
+```shell
+./build_go.sh
+```
+
+To build go site only, run:
+```shell
+./build_site.sh
+```
+
 To run hugo site in development mode:
 ```shell
 cd ecms-site
-hugo server -D
+hugo server
 ```
 
 Build:
