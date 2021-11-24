@@ -1,22 +1,29 @@
 ---
-title: "规则用法"
+title: "使用方法"
 date: 2021-11-22T17:39:10+08:00
 ---
-## 命名规则
-- 尽量不要带 err 或 error。例如：未授权错误应命名为 Unauthorized 而不是 UnauthorizedError
-- 使用驼峰法命名，不要有下划线！参考：[net/http/status.go](https://golang.org/src/net/http/status.go)
-- 命名和描述都要遵守先英文描述后中文描述的规则。
+## 前提条件
+If you want to build site, install Hugo. For mac with homebrew:
+```shell
+brew install hugo
+```
+For other platforms, see: https://gohugo.io/getting-started/installing/
 
-## 错误码分段规则
-- 数据类型：int32 (最长支持9位)
-- 0 保留用作表示 成功
-- 错误码从 *10 000 000* 开始设计，以保证长度相同，同时避免和框架错误码冲突。（Kite框架错误：100~1000、Mesh相关错误：1000~10000）
-- 业务错误码从 *20 000 000* 开始设计，*10 000 000*～*19 999 999* 为通用错误码段。尽管没有那么多通用错误码需求，但为了可以让用户从第一个数字就能分辨出是通用错误还是业务错误，这里设计了这个区间。
-- 每个分级下错误码建议从 001 开始，000 作为分级通用错误保留（例如对错误不好定义或未知错误）
+## 如何生成代码
+To generate both go code and site code, run:
+```shell
+./build.sh
+```
 
-| 平台标识 platform | 服务模块 module | 具体错误 specific error |
-|-------------------|-----------------|-------------------------|
-| (BB)              | (CCC)           | (DDD)                   |
+To build go code only, run:
+```shell
+./build_go.sh
+```
+
+To build site only, run:
+```shell
+./build_site.sh
+```
 
 ## 如何新增平台
 以新增 *组织中心 (organization)* 平台为例
@@ -60,8 +67,3 @@ specific_errors:
   desc: "No authentication from organization permission control center 无组织中心权限系统授权" # 只会影响注释和网页文档
 ```
 2. 运行命令生成代码
-
-## 如何生成代码
-```shell
-./build.sh
-```

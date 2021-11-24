@@ -2,7 +2,7 @@
 Golang error code management system. For error code doc, see: https://mgsweet.com/go-ecms/
 
 ## Preconditions
-Install Hugo, for mac with homebrew:
+If you want to build site, install Hugo. For mac with homebrew:
 ```shell
 brew install hugo
 ```
@@ -19,7 +19,7 @@ To build go code only, run:
 ./build_go.sh
 ```
 
-To build go site only, run:
+To build site only, run:
 ```shell
 ./build_site.sh
 ```
